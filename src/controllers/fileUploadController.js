@@ -19,7 +19,7 @@ const validateDate = (value) => {
   return !isNaN(Date.parse(value));
 };
 
-// this function will get the uploaded file and process the excel file. It'll get data out of it and will send back to the frontend for validation
+// this function will get the uploaded file and process the excel file. It'll get data out of it and will send back to the frontend for validation. in this function it'll also check that whether each field is correct typed or not.
 const uploadFile = (req, res) => {
   upload.single("file")(req, res, (err) => {
     try {
