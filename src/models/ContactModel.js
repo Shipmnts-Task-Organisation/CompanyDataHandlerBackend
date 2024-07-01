@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Company = require("./CompanyModel");
 
 const ContactType = ["Primary", "Secondary", "Other"];
 const contactSchema = new mongoose.Schema({
@@ -18,10 +19,14 @@ const contactSchema = new mongoose.Schema({
     type: Date,
     required: false,
   },
-  industryType: {
+  contactType: {
     type: String,
     enum: ContactType,
     required: true,
+  },
+  company: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Company",
   },
 });
 

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Contact = require("./ContactModel");
 
 const IndustryType = ["Technology", "Finance", "Healthcare", "Retail", "Other"];
 
@@ -37,7 +36,6 @@ const companySchema = new mongoose.Schema({
     enum: IndustryType,
     required: true,
   },
-  contacts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Contact" }],
 });
 
 const Company = mongoose.model("Company", companySchema);
