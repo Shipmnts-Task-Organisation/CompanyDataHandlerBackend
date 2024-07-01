@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const Company = require("./CompanyModel");
 
 const ContactType = ["Primary", "Secondary", "Other"];
+
+// this is Model Contact Schema
 const contactSchema = new mongoose.Schema({
   name: {
     type: String,

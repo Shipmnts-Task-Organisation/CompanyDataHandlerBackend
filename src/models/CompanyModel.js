@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const IndustryType = ["Technology", "Finance", "Healthcare", "Retail", "Other"];
 
+// this is the Model Company Schema
 const companySchema = new mongoose.Schema({
   name: {
     type: String,

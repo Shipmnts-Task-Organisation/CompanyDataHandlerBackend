@@ -4,18 +4,22 @@ const upload = multer({ storage: multer.memoryStorage() });
 const Company = require("../models/CompanyModel");
 const Contact = require("../models/ContactModel");
 
+// this function will validate the values which are of type string.
 const validateString = (value) => {
   return typeof value === "string" && value.trim() !== "";
 };
 
+// this function will validate the values which are of type numarical.
 const validateNumeric = (value) => {
   return /^\d+$/.test(value) || /^\d{3}-\d{4}$/.test(value);
 };
 
+// this function will validate the values which are of type date.
 const validateDate = (value) => {
   return !isNaN(Date.parse(value));
 };
 
+// this function will get the uploaded file and process the excel file. It'll get data out of it and will send back to the frontend for validation
 const uploadFile = (req, res) => {
   upload.single("file")(req, res, (err) => {
     try {
@@ -82,6 +86,7 @@ const uploadFile = (req, res) => {
   });
 };
 
+// this function will store the validated data in the database.
 const storeFile = async (req, res) => {
   const fileData = req.body.data;
   try {
