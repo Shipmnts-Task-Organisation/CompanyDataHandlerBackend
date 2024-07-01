@@ -1,4 +1,4 @@
-1. Clone the repository to your local machine:
+# commands for setup
 
    ```
    git clone https://github.com/your-username/BreadcrumbsCompanyDataHandlerBackend.git
